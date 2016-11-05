@@ -19,3 +19,7 @@ data/out/
 .atom*
 .ensime*
 .idea*
+
+# ENZYME data
+enzclass.txt
+enzyme.dat

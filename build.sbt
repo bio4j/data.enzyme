@@ -1,6 +1,6 @@
 name          := "data.enzyme"
 organization  := "bio4j"
-description   := "data.enzyme project"
+description   := "ENZYME ADT and flat file parsers"
 
 bucketSuffix  := "era7.com"
 
