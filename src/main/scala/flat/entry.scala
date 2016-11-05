@@ -22,7 +22,7 @@ case class Entry(val lines: Seq[String]) extends AnyEntry {
   def catalyticActivity: String =
     ca.catalyticActivity
 
-  def comments: String =
+  def comments: Seq[String] =
     cc.comments
 
   private lazy val id: ID =
@@ -86,11 +86,13 @@ private case class CA(val lines: Seq[String]) extends AnyVal {
 
 private case class CC(val lines: Seq[String]) extends AnyVal {
 
-  def comments: String =
+  def comments: Seq[String] =
     lines.mkString(" ")
+      .split("-!-")
+      .collect { case txt if(txt.nonEmpty) => txt.trim.stripSuffix(".") }
 }
 
-case object Entries {
+case object entries {
 
   /*
     ENZYME entries file have a "header" consisting on CC lines and an end of entry // line.

@@ -9,7 +9,7 @@ trait AnyEntry extends Any {
   def alternativeNames: Seq[String]
   def cofactors: Seq[String]
   def catalyticActivity: String
-  def comments: String
+  def comments: Seq[String]
 }
 
 sealed trait EnzymeClasses extends Any {
