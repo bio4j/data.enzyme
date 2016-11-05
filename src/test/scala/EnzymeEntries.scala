@@ -25,4 +25,25 @@ class ParseEnzymeEntries extends FunSuite {
       val comments          = e.comments
     }
   }
+
+  test("check first entry") {
+
+    val firstEntry = allEntries.head
+
+    assert {
+
+      ( firstEntry.ID === "1.1.1.1"                                 ) &&
+      ( firstEntry.subSubClassID === "1.1.1.-"                      ) &&
+      ( firstEntry.description === "Alcohol dehydrogenase"          ) &&
+      ( firstEntry.alternativeNames === Seq("Aldehyde reductase")   ) &&
+      (
+        firstEntry.catalyticActivity === "(1) An alcohol + NAD(+) = an aldehyde or ketone + NADH. (2) A secondary alcohol + NAD(+) = a ketone + NADH."
+                                                                    ) &&
+      ( firstEntry.cofactors === Seq("Zn(2+) or Fe cation")         ) &&
+      firstEntry.comments === Seq(
+          "Acts on primary or secondary alcohols or hemi-acetals with very broad specificity; however the enzyme oxidizes methanol much more poorly than ethanol",
+          "The animal, but not the yeast, enzyme acts also on cyclic secondary alcohols"
+        )
+    }
+  }
 }
