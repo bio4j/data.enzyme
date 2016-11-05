@@ -4,3 +4,7 @@ resolvers ++= Seq(
 )
 
 addSbtPlugin("ohnosequences" % "nice-sbt-settings" % "0.8.0-RC4")
+// test coverage
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.4.0")
+// codacy
+addSbtPlugin("com.codacy" % "sbt-codacy-coverage" % "1.3.4")
